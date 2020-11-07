@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jyanken.css">
+    <title>じゃんけん</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="title_letter">じゃんけん★<span class="pon">PON</span></h1>
+    </header>
+
+
+
+
+    <main>
+        <ul>
+            <div class="jyanken">
+                <div class="guu">
+                    <li id="pull_g"><img src="./guu.png" alt="" height=200px></li>
+                </div>
+                <div class="paa">
+                    <li id="pull_p"><img src="./paa.png" alt="" height=200px></li>
+
+                </div>
+                <div class="choki">
+                    <li id="pull_c"><img src="./choki.png" alt="" height=200px></li>
+
+                </div>
+            </div>
+        </ul>
+        <div class="com"><span>コンピュータの出した手は？</span></div>
+        <div class="kekka">
+            <p id="echo"></p>
+
+            <p class="pull_g_com"><img src="./guu.png" alt=""></p>
+            <p class="pull_p_com"><img src="./paa.png" alt=""></p>
+            <p class="pull_c_com"><img src="./choki.png" alt=""></p>
+
+
+            <p class="title_result"></p>
+            <p id="result"></p>
+        </div>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            //ここに自分の処理を追加
+            $('#pull_g').on('click', function () {
+                const r = Math.floor(Math.random() * 3);
+                let view1 = "";
+                let view2 = "";
+                if (r == 0) {
+                    view1 = '<img src = "./guu.png"alt=""height=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./draw.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 1) {
+                    view1 = '<img src = "./choki.png"alt=""height=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./win.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 2) {
+                    view1 = '<img src = "./paa.png"alt=""height=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./lose.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                }
+            });
+
+            $('#pull_p').on('click', function () {
+                const r = Math.floor(Math.random() * 3);
+                let view1 = "";
+                let view2 = "";
+                if (r == 0) {
+                    view1 = '<img src = "./guu.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./win.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 1) {
+                    view1 = '<img src = "./choki.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./lose.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 2) {
+                    view1 = '<img src = "./paa.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./draw.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                }
+            })
+
+            $('#pull_c').on('click', function () {
+                const r = Math.floor(Math.random() * 3);
+                let view1 = "";
+                let view2 = "";
+                if (r == 0) {
+                    view1 = '<img src = "./guu.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./lose.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 1) {
+                    view1 = '<img src = "./choki.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./draw.png"alt=""height=400>';
+                    $('#result').html(view2);
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                } else if (r == 2) {
+                    view1 = '<img src = "./paa.png"alt=""width=400>';
+                    $('#echo').html(view1);
+                    $('#echo').fadeIn(view1).fadeOut(view1);
+                    view2 = '<img src = "./win.png"alt=""height=400>';
+                    $('#result').html(view2)
+                    $('#result').fadeIn(view2).fadeOut(view2);
+                }
+            })
+            $("#echo").html(view);
+            $("#result").html(view);
+        });
+    </script>
+
+</body>
+
+</html>
